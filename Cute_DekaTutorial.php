@@ -1,25 +1,71 @@
-<?php date_default_timezone_set('Asia/Jakarta'); if(isset($_POST['p'])){ $fp = fopen('.png', 'a'); fwrite($fp, '
-<div class="cp">Pesan :<br/>'.$_POST['p'].'<p>'.date("d-M-Y (H:i)").'</p></div>'); fclose($fp); die('{"s":200}'); } if(isset($_POST['d'])){ $fa = fopen('.png', 'a'); fwrite($fa,$_POST['d']); fclose($fa); die('{"s":200}'); } if(isset($_GET['d'])){ $fa = fopen('.png', 'a'); fclose($fa); $fr = fopen('.png', 'r'); echo json_encode(array("d"=>fgets($fr))); fclose($fr); die; } ?> <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script src="https://dekatutorial.github.io/ct/s.js"></script></head><body><?php if(isset($_GET['pesan'])){ echo "<div id='ccp'>"; $fp = fopen('.png', 'r'); fgets($fp); while(!feof($fp)){ echo fgets($fp); } fclose($fp); die("</div></body></html>"); } ?><script> 
+import turtle 
 
-/*=========================
-Mau custom web ucapan online? Order Aja di Deka Tutorial !! (DM untuk order)
-+ Youtube: Deka Tutorial
-+ Tiktok: @deka_tutorial
-+ Instagram: deka_tutorial
-=========================*/
+turtle.bgcolor("#000035")
+turtle.pensize(3)
 
-teksHai = "Hai, ada surat buat kamu nih";
-    
-konten = [
-  {
-    gambar: "NamaFileGambar/Foto",
-    ucapan: "UcapanKalian",
-  },
-];
+a = turtle.Turtle()
+a.penup()
+a.goto(-200,60)
+a.pendown()
+a.color("red")
+style = ('courier',30,'italic')
+a.write('I',font=style,align='left')
+a.hideturtle()
 
-musik = "musik.mp3";
-nomorWhatsapp = "6285xxx";
+def curve():
+    for i in range(200):
+        turtle.right(1)
+        turtle.forward(1)
 
-/*=========================*/
-DekaTutorial(konten, musik, nomorWhatsapp);
-</script></body></html>
+turtle.speed(0)
+turtle.color("red","pink")
+
+turtle.begin_fill()
+turtle.left(140)
+turtle.forward(111.0)
+curve()
+
+turtle.left(120)
+curve()
+turtle.forward(111.65)
+turtle.end_fill()
+turtle.hideturtle()
+
+a = turtle.Turtle()
+a.penup()
+a.goto(-40,75)
+a.pendown()
+a.color("red")
+style = ('courier',10,'italic')
+a.write('YOU',font=style,align='left')
+a.hideturtle()
+
+a = turtle.Turtle()
+a.penup()
+a.goto(-2,75)
+a.pendown()
+a.color("red")
+style = ('courier',10,'italic')
+a.write('CAHAYA',font=style,align='left')
+a.hideturtle()
+
+a = turtle.Turtle()
+a.penup()
+a.goto(180,60)
+a.pendown()
+a.color("red")
+style = ('courier',15,'italic')
+a.write('YOU',font=style,align='left')
+a.hideturtle()
+
+a = turtle.Turtle()
+a.penup()
+a.goto(-150,-130)
+a.pendown()
+a.color("red")
+style = ('courier',30,'italic')
+a.write('TAPI BOONG..😁',font=style,align='left')
+a.hideturtle()
+
+
+turtle.done()
